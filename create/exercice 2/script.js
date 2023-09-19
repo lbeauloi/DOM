@@ -51,25 +51,7 @@ function getRandomColor() {
   }
   return color;
 }
-//---------------------------------------------------------------------
-
-
-
-  // FONCTION POUR VERIFIER LA LUMINOSITE DE LA COULEUR
-  // ----------------------------------------------------------------------------------------------------------------------
-  function darkColor(color) {
-    //convertir la couleur en RGB
-    var r = parseInt(color.slice(1, 3), 16); //parseInt() analyse une chaîne de caractères (string) et la converti en un nombre entier (integer)
-    var g = parseInt(color.slice(3, 5), 16);
-    var b = parseInt(color.slice(5, 7), 16);
-    //calculer la luminosité(via formule YIQ)
-    let lum = (r * 299 + g * 587 + b * 114) / 1000; //formule de YIQ, on divise par 1000 pour que la valeur de lum soit dans une plage de 0 à 255 (pour etre facilement comparé aux valeurs RGB)
-    //si luminosité faible (couleur foncée), renvoyer vrai, sinon faux
-    return lum < 128;
-  }
-  //-------------------------------------------------------------------------------------------------------------------------
-
-
+//----------------------------------------------------------------------------------------------------------------------
 
 // FONCTION POUR VERIFIER LA LUMINOSITE DE LA COULEUR
 // ----------------------------------------------------------------------------------------------------------------------
@@ -85,7 +67,19 @@ function darkColor(color) {
 }
 //-------------------------------------------------------------------------------------------------------------------------
 
-
+// FONCTION POUR VERIFIER LA LUMINOSITE DE LA COULEUR
+// ----------------------------------------------------------------------------------------------------------------------
+function darkColor(color) {
+  //convertir la couleur en RGB
+  var r = parseInt(color.slice(1, 3), 16); //parseInt() analyse une chaîne de caractères (string) et la converti en un nombre entier (integer)
+  var g = parseInt(color.slice(3, 5), 16);
+  var b = parseInt(color.slice(5, 7), 16);
+  //calculer la luminosité(via formule YIQ)
+  let lum = (r * 299 + g * 587 + b * 114) / 1000; //formule de YIQ, on divise par 1000 pour que la valeur de lum soit dans une plage de 0 à 255 (pour etre facilement comparé aux valeurs RGB)
+  //si luminosité faible (couleur foncée), renvoyer vrai, sinon faux
+  return lum < 128;
+}
+//-------------------------------------------------------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------------------------------------------------------
 //BOUCLE POUR CREER 26 SECTIONS AVEC PARAGRAPHES, DES BG DE COLEURS ALEATOIRES ET UN TEXTE CONTRASTE

@@ -41,7 +41,6 @@ let arrLearner = [
 //selectionner l'élément article existant dans l'html via le queryslector
 let article = document.querySelector("article");
 
-
 // FONCTION DE L'EXO PRECEDENT POUR GENERER UNE COULEUR RANDOM
 //--------------------------------------------------------------------
 function getRandomColor() {
@@ -54,22 +53,18 @@ function getRandomColor() {
 }
 //---------------------------------------------------------------------
 
-
-
 // ---------------------------------------------------------------------------------------------------------------------------
-//BOUCLE POUR CREER 26 SECTIONS AVEC PARAGRAPHES, DES BG DE COLEURS ALEATOIRES ET UN TEXTE CONTRASTE
-for (let i = 0; i < 26; i++) {  
-  
+//BOUCLE POUR CREER 26 SECTIONS AVEC PARAGRAPHES, DES BG DE COLEURS ALEATOIRES
+for (let i = 0; i < 26; i++) {
   let section = document.createElement("section"); //crée une nouvelle section
   let p = document.createElement("p"); //crée un p
-  p.textContent = arrLearner[i];  //utilise le contenu du tableau (le noms des Learners)
+  p.textContent = arrLearner[i]; //utilise le contenu du tableau (le noms des Learners)
 
-  
   let backgroundColor = getRandomColor(); //génere une couleur aléatoire et l'applique comme bg color
   section.style.backgroundColor = backgroundColor;
 
-  section.appendChild(p);  //ajoute p à la section
- 
-  article.appendChild(section);  //ajoute la section à l'article
+  section.appendChild(p); //ajoute p à la section
+
+  article.appendChild(section); //ajoute la section à l'article
 }
 // --------------------------------------------------------------------------------------------------------
